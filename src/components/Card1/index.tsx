@@ -8,13 +8,13 @@ import {
   faMoneyBill,
 } from '@fortawesome/free-solid-svg-icons'
 
-export const Card1 = () => {
+export const Card1 = ({ language }: any) => {
   return (
     <div className="flex flex-col col-span-1 gap-5">
       <div className="card text-center bg-base-100 shadow-xl">
         <div className="card-body p-2">
           <p className="text-sm text-base-content font-normal italic ">
-            Desenvolvedor
+            {language === 'portugues' ? 'Desenvolvedor' : 'Developer'}
           </p>
           <h1 className="text-xl text-base-content font-bold">
             Murilo Fernandes de Lima
@@ -31,8 +31,9 @@ export const Card1 = () => {
         </div>
         <div className="card-body p-2 italic  text-base-content">
           <span>
-            Programador front-end, cristão, apaixonado por tecnologia e na
-            aprendizagem com os processos
+            {language === 'portugues'
+              ? 'Programador front-end, cristão, apaixonado por tecnologia e na aprendizagem com os processos'
+              : 'Front-end programmer, Christian, passionate about technology and learning with processes'}
           </span>
         </div>
       </div>
@@ -45,7 +46,7 @@ export const Card1 = () => {
                   icon={faCake}
                   className="mr-2 w-5 h-5 text-base-content"
                 />
-                <span>20 anos</span>
+                <span>20 {language === 'portugues' ? 'anos' : 'years'}</span>
               </div>
               <div className="flex items-center">
                 <FontAwesomeIcon
@@ -59,7 +60,11 @@ export const Card1 = () => {
                   icon={faBriefcase}
                   className="mr-2 w-5 h-5 text-base-content"
                 />
-                <span>Desenvolvedor Front-end</span>
+                <span>
+                  {language === 'portugues'
+                    ? 'Desenvolvedor Front-end'
+                    : 'Front end developer'}
+                </span>
               </div>
             </div>
             <div className="flex flex-col justify-between">
