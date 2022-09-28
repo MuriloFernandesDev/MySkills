@@ -1,9 +1,11 @@
-export const Card2 = () => {
+export const Card2 = ({ language }: any) => {
   return (
     <div className="flex flex-col col-span-3 gap-5">
       <div className="card text-start bg-base-100 shadow-xl text-primary-content ">
         <div className="card-body">
-          <h1 className="text-2xl font-bold text-base-content">Sobre</h1>
+          <h1 className="text-2xl font-bold text-base-content">
+            {language === 'portugues' ? 'Sobre' : 'About'}
+          </h1>
           <span>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim velit mollit. Exercitation
@@ -15,7 +17,10 @@ export const Card2 = () => {
       </div>
       <div className="card text-start bg-base-100 shadow-xl text-primary-content ">
         <div className="card-body">
-          <h1 className="text-2xl font-bold text-base-content">Objetivos</h1>
+          <h1 className="text-2xl font-bold text-base-content">
+            {' '}
+            {language === 'portugues' ? 'Objetivos' : 'Objective'}
+          </h1>
           <ul className="list-disc">
             <li>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -30,7 +35,10 @@ export const Card2 = () => {
       </div>
       <div className="card text-start bg-base-100 shadow-xl text-primary-content ">
         <div className="card-body">
-          <h1 className="text-2xl font-bold text-base-content">Conquistas</h1>
+          <h1 className="text-2xl font-bold text-base-content">
+            {' '}
+            {language === 'portugues' ? 'Conquistas' : 'Conquests'}
+          </h1>
           <ul className="list-disc">
             <li>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do

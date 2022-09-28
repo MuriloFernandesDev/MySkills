@@ -39,8 +39,8 @@ export const Card1 = ({ language }: any) => {
       </div>
       <div className="card text-center bg-base-100 shadow-xl text-primary-content">
         <div className="card-body p-2">
-          <div className="flex justify-between">
-            <div className="flex flex-col justify-between">
+          <div className="flex">
+            <div className="flex flex-col justify-between text-start">
               <div className="flex items-center">
                 <FontAwesomeIcon
                   icon={faCake}
@@ -73,7 +73,7 @@ export const Card1 = ({ language }: any) => {
                   icon={faHeart}
                   className="mr-2 w-5 h-5 text-base-content"
                 />
-                <span>Solteiro</span>
+                <span>{language === 'portugues' ? 'Solteiro' : 'single'}</span>
               </div>
               <div className="flex items-center">
                 <FontAwesomeIcon

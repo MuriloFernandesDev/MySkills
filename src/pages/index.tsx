@@ -86,7 +86,9 @@ const Home: NextPage = () => {
                 >
                   <div className="grid grid-cols-5 grid-rows-3">
                     <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
-                      <div className="flex-grow text-sm font-bold">light</div>{' '}
+                      <div className="flex-grow text-sm font-bold">
+                        {language === 'portugues' ? 'Claro' : 'Light'}
+                      </div>{' '}
                       <div className="flex flex-shrink-0 flex-wrap gap-1">
                         <div className="bg-primary w-2 rounded"></div>{' '}
                         <div className="bg-secondary w-2 rounded"></div>{' '}
@@ -104,7 +106,9 @@ const Home: NextPage = () => {
                 >
                   <div className="grid grid-cols-5 grid-rows-3">
                     <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
-                      <div className="flex-grow text-sm font-bold">Dark</div>{' '}
+                      <div className="flex-grow text-sm font-bold">
+                        {language === 'portugues' ? 'Escuro' : 'Dark'}
+                      </div>{' '}
                       <div className="flex flex-shrink-0 flex-wrap gap-1">
                         <div className="bg-primary w-2 rounded"></div>{' '}
                         <div className="bg-secondary w-2 rounded"></div>{' '}
@@ -143,32 +147,31 @@ const Home: NextPage = () => {
               tabIndex={1}
               className="dropdown-content menu gap-4 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <button className="btn" onClick={() => setLanguage('english')}>
-                  <img
-                    loading="lazy"
-                    width="20"
-                    height="20"
-                    alt="English"
-                    src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/svg/1f1ec-1f1e7.svg"
-                  />
-                  <span className="flex flex-1 justify-between">English</span>
-                </button>
+              <li onClick={() => setLanguage('english')}>
+                <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                  <div className="flex-grow text-sm font-bold">
+                    {language === 'portugues' ? 'Inglês' : 'English'}
+                  </div>{' '}
+                  <div className="flex flex-shrink-0 flex-wrap gap-1">
+                    <div className="bg-primary w-2 rounded"></div>{' '}
+                    <div className="bg-secondary w-2 rounded"></div>{' '}
+                    <div className="bg-accent w-2 rounded"></div>{' '}
+                    <div className="bg-neutral w-2 rounded"></div>
+                  </div>
+                </div>
               </li>
-              <li>
-                <button
-                  className="btn"
-                  onClick={() => setLanguage('portugues')}
-                >
-                  <img
-                    loading="lazy"
-                    width="20"
-                    height="20"
-                    alt="English"
-                    src="https://cdn-icons-png.flaticon.com/512/2151/2151295.png"
-                  />
-                  <span className="flex flex-1 justify-between">Português</span>
-                </button>
+              <li onClick={() => setLanguage('portugues')}>
+                <div className="col-span-5 row-span-3 row-start-1 flex gap-1 py-3 px-4">
+                  <div className="flex-grow text-sm font-bold">
+                    {language === 'portugues' ? 'Português' : 'Portuguese'}
+                  </div>{' '}
+                  <div className="flex flex-shrink-0 flex-wrap gap-1">
+                    <div className="bg-primary w-2 rounded"></div>{' '}
+                    <div className="bg-secondary w-2 rounded"></div>{' '}
+                    <div className="bg-accent w-2 rounded"></div>{' '}
+                    <div className="bg-neutral w-2 rounded"></div>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -177,8 +180,8 @@ const Home: NextPage = () => {
 
       <div className="md:grid flex flex-col py-4 mr-4 ml-4 md:px-0 md:grid-cols-5 gap-3 max-w-7xl mx-auto">
         <Card1 language={language} />
-        <Card2 />
-        <Card3 />
+        <Card2 language={language} />
+        <Card3 language={language} />
       </div>
     </Theme>
   )
