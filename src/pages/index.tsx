@@ -5,7 +5,7 @@ import { Card1 } from '../components/Card1'
 import { Card2 } from '../components/Card2'
 import { Card3 } from '../components/Card3'
 import { Theme } from 'react-daisyui'
-import { parseCookies, setCookie } from 'nookies'
+import { parseCookies } from 'nookies'
 import { setCookies } from '../utils/setCookies'
 
 const Home: NextPage = () => {
@@ -57,10 +57,10 @@ const Home: NextPage = () => {
                   stroke-width="2"
                   d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
                 ></path>
-              </svg>{' '}
-              <span className="hidden md:inline">
+              </svg>
+              <span className="text-xs">
                 {language === 'portugues' ? 'Tema' : 'Theme'}
-              </span>{' '}
+              </span>
               <svg
                 width="12px"
                 height="12px"
@@ -132,7 +132,10 @@ const Home: NextPage = () => {
               >
                 <path d="M363,176,246,464h47.24l24.49-58h90.54l24.49,58H480ZM336.31,362,363,279.85,389.69,362Z"></path>
                 <path d="M272,320c-.25-.19-20.59-15.77-45.42-42.67,39.58-53.64,62-114.61,71.15-143.33H352V90H214V48H170V90H32v44H251.25c-9.52,26.95-27.05,69.5-53.79,108.36-32.68-43.44-47.14-75.88-47.33-76.22L143,152l-38,22,6.87,13.86c.89,1.56,17.19,37.9,54.71,86.57.92,1.21,1.85,2.39,2.78,3.57-49.72,56.86-89.15,79.09-89.66,79.47L64,368l23,36,19.3-11.47c2.2-1.67,41.33-24,92-80.78,24.52,26.28,43.22,40.83,44.3,41.67L255,362Z"></path>
-              </svg>{' '}
+              </svg>
+              <span className="text-xs">
+                {language === 'portugues' ? 'Idioma' : 'Lenguage'}
+              </span>
               <svg
                 width="12px"
                 height="12px"
@@ -181,7 +184,7 @@ const Home: NextPage = () => {
       <div className="md:grid flex flex-col py-4 mr-4 ml-4 md:px-0 md:grid-cols-5 gap-3 max-w-7xl mx-auto">
         <Card1 language={language} />
         <Card2 language={language} />
-        <Card3 language={language} />
+        <Card3 language={language} theme={theme} />
       </div>
     </Theme>
   )
